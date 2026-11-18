@@ -44,6 +44,21 @@
           <img class="hero-image" src="images/hero-weekly-plan.jpg" alt="A business owner at her desk with a laptop and an open planner">
         </div>
       </div>
+      <div><form action="/submit" method="POST">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <div class="form-extra-info" aria-hidden="true">
+    <label for="website">Website (Leave this field blank)</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+  </div>
+
+  <button type="submit">Send</button>
+</form>
+</div>
     </section>
 
     <section class="trust">
