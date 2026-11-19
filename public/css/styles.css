@@ -214,7 +214,8 @@ img {
 }
 
 .site-header--home .container {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  gap: 0;
 }
 
 .site-header--home nav {
@@ -222,7 +223,7 @@ img {
 }
 
 .site-header--home .nav-links {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0;
 }
 
@@ -257,6 +258,7 @@ img {
   display: flex;
   align-items: center;
   gap: 56px;
+  flex-direction: column-reverse;
 }
 
 .hero-text {
@@ -276,7 +278,7 @@ img {
 
 .hero-media {
   width: 600px;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
 
 .hero-image {
@@ -841,10 +843,6 @@ img {
     max-width: 100%;
     overflow-x: hidden;
   }
-
-  .nav-links {
-    font-size: 8px;
-  }
 }
 
 @media (max-width: 500px) {
@@ -873,14 +871,9 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
   }
-  
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
   .hero-image {
-    width: 50%;
+    width: 500%;
   }
 
   .playbook-grid {
