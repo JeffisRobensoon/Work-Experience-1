@@ -47,3 +47,13 @@ form.addEventListener('submit', async (event) => {
     button.disabled = false;
   }
 });
+
+window.addEventListener('load', () => {
+  const cssResources = performance.getEntriesByType('resource')
+    .filter(resource => resource.initiatorType === 'link' && resource.name.endsWith('.css'));
+
+  cssResources.forEach(css => {
+    console.log(`${css.name}: ${css.duration.toFixed(2)} ms`);
+  });
+});
+
