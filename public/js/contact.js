@@ -10,6 +10,20 @@ form.addEventListener('submit', async (event) => {
   statusEl.className = 'form-status';
 
   const data = Object.fromEntries(new FormData(form));
+  app.post('/your-action-url', (req, res) => {
+  const { honeypot } = req.body;
+
+  // Check if the honeypot field is filled
+  if (honeypot) {
+    console.log('Bot submission detected');
+    return res.status(400).send('Submission dropped'); // or send a success message
+  }
+
+  // Process valid submission
+  console.log('Valid submission received');
+  // ... handle other form fields and send a response ...
+});
+
 
   try {
     const response = await fetch('/contact', {
