@@ -1,5 +1,6 @@
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
+let loadedAt = Date.now()
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -8,22 +9,6 @@ form.addEventListener('submit', async (event) => {
   button.disabled = true;
   statusEl.textContent = '';
   statusEl.className = 'form-status';
-
-  const data = Object.fromEntries(new FormData(form));
-  app.post('/your-action-url', (req, res) => {
-  const { honeypot } = req.body;
-
-  // Check if the honeypot field is filled
-  if (honeypot) {
-    console.log('Bot submission detected');
-    return res.status(400).send('Submission dropped'); // or send a success message
-  }
-
-  // Process valid submission
-  console.log('Valid submission received');
-  // ... handle other form fields and send a response ...
-});
-
 
   try {
     const response = await fetch('/contact', {
@@ -46,14 +31,5 @@ form.addEventListener('submit', async (event) => {
   } finally {
     button.disabled = false;
   }
-});
-
-window.addEventListener('load', () => {
-  const cssResources = performance.getEntriesByType('resource')
-    .filter(resource => resource.initiatorType === 'link' && resource.name.endsWith('.css'));
-
-  cssResources.forEach(css => {
-    console.log(`${css.name}: ${css.duration.toFixed(2)} ms`);
-  });
 });
 

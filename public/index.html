@@ -45,12 +45,16 @@
         </div>
       </div>
       <form id="contact-form" method="post" action="your-action-url">
-  <!-- Other form fields like name, email, message go here -->
+      
+        <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
 
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" required>
   <!-- Honeypot field -->
-  <div style="display:none;">
-    <label for="honeypot">If you are human, leave this field blank:</label>
-    <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+  <div class="honeypot__wrapper">
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    <input type="text" >
   </div>
 
   <button type="submit">Submit</button>
