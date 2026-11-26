@@ -4,6 +4,7 @@ let loadedAt = Date.now()
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
+  data.formStartedAt = formStartedAt
 
   const button = form.querySelector('button[type="submit"]');
   button.disabled = true;

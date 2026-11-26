@@ -18,6 +18,13 @@ app.post('/contact', (req, res) => {
     return res.status(400).json({ ok: false, error: 'Please fill in your name, email and message.' });
   }
 
+  if (!Number(req.body.formStarterAt) ||
+    Date.now() - Number(req.body.formStattedAt) < 3000) {
+      return res.status(400).json({
+        ok: false,
+        error: "Form submitted too quickly."
+      });
+    }
   sendToSupport({ name, email, message });
   res.json({ ok: true });
 });
