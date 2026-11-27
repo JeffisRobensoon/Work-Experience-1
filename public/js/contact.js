@@ -1,15 +1,16 @@
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
+let loadedAt = Date.now()
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
+  const data = Object.fromEntries(new FormData(form));
+  data.formStartedAt = loadedAt;
 
   const button = form.querySelector('button[type="submit"]');
   button.disabled = true;
   statusEl.textContent = '';
   statusEl.className = 'form-status';
-
-  const data = Object.fromEntries(new FormData(form));
 
   try {
     const response = await fetch('/contact', {
@@ -33,3 +34,4 @@ form.addEventListener('submit', async (event) => {
     button.disabled = false;
   }
 });
+

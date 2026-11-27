@@ -31,12 +31,16 @@
         <span class="eyebrow">Contact</span>
         <h1>Let&rsquo;s set your first goal</h1>
         <p class="lead">Tell us a little about your business and we&rsquo;ll book a free 45-minute goal-setting session. Questions about your account are welcome too.</p>
-      </div>
+  </div>
     </section>
 
     <section class="section">
       <div class="container contact-layout">
         <form class="contact-form" id="contact-form" action="/contact" method="post">
+              <!-- Honeypot field -->
+      <div class="honeypot__wrapper">
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
           <label for="name">Your name</label>
           <input type="text" id="name" name="name" required>
 

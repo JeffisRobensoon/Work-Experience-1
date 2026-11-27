@@ -18,6 +18,10 @@ app.post('/contact', (req, res) => {
     return res.status(400).json({ ok: false, error: 'Please fill in your name, email and message.' });
   }
 
+  const startedAt = Number(req.body.formStartedAt);
+  if (!startedAt || Date.now() - startedAt < 3000) {
+      return res.send({ok: true})
+      }
   sendToSupport({ name, email, message });
   res.json({ ok: true });
 });
