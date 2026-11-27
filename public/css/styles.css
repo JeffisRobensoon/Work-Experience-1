@@ -135,6 +135,10 @@ img {
 .honeypot__wrapper {
   position: absolute;
   left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
 }
 
 /* Header */
