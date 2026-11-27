@@ -821,12 +821,6 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
-  .nav-links {
-    width: 100%;
-    justify-content: space-between;
-    font-size: 10px;
-  }
-
   .btn {
     display: flex;
     font-size: 10px;
@@ -836,16 +830,9 @@ img {
     box-sizing: border-box;
     width: fit-content;
   }
-
-  .hero-image {
-    width: 80%;
-  }
 }
 
 @media (max-width: 670px) {
-  .hero-image {
-    width: 55%;
-  }
 
   html,
   body {
@@ -879,10 +866,6 @@ img {
 
   .footer-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero-image {
-    width: 80%;
   }
 
   .playbook-grid {
